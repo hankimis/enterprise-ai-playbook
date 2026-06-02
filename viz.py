@@ -168,5 +168,20 @@ def agent_reality():
     ax.grid(axis="x", alpha=0.25); fig.tight_layout()
     fig.savefig(FIGS/"fig6_agent_reality.png", bbox_inches="tight"); print("fig6_agent_reality.png")
 
+# Fig 7: the AI design look is measurable (Tell Score, The Tells study)
+def tell_score():
+    fig, ax = plt.subplots(figsize=(7.2, 4.6))
+    bars = ax.bar(["Before\n(AI defaults)", "After\n(tells refactored)"], [76, 0],
+                  color=[RED, GREEN], width=0.5)
+    ax.bar_label(bars, labels=["76  (F)", "0  (A)"], padding=4, fontsize=15, weight="bold")
+    ax.axhline(0, color="#333", lw=0.8)
+    ax.set_ylim(0, 90); ax.set_ylabel("Tell Score (0–100, lower is better)")
+    ax.set_title("The 'AI design look' is measurable, and removable\nSame page, only tell-bearing choices changed",
+                 fontsize=12.5, weight="bold")
+    ax.text(1.0, -0.16, "IOV Labs · The Tells (21 tells, 7 families; validated on 202 real sites)",
+            transform=ax.transAxes, ha="right", fontsize=8.5, color=GREY)
+    style(ax); fig.tight_layout()
+    fig.savefig(FIGS/"fig7_tell_score.png", bbox_inches="tight"); print("fig7_tell_score.png")
+
 if __name__ == "__main__":
-    perception_gap(); roi_reality(); code_insecurity(); model_difficulty(); when_ai_helps(); agent_reality()
+    perception_gap(); roi_reality(); code_insecurity(); model_difficulty(); when_ai_helps(); agent_reality(); tell_score()
