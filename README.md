@@ -67,11 +67,12 @@
 | 1 | 현실 점검 | 정직한 검증 수치, 생산성 역설 |
 | 2 | **개발·코딩** | **AI는 언제 빠르게/느리게(균형 근거 + 조건 매트릭스)**, 난이도별 모델 티어(93/74/67%), $20·$200 가격표, GitHub Agent HQ, 표준 워크플로 + **AI 코드 PR 리뷰 체크리스트** |
 | 3 | **디자인·마케팅** | "AI 티" 제거: 왜 다 보라 그라데이션인가, **디자인 시스템 마크다운 템플릿**, "AI 티" 판별 체크리스트, [The Tells](https://labs.iovstudio.kr/ko/papers/ai-design-tells) 연계 |
-| 4 | **업무 자동화** | RAG 도구·가격(M365 $30·Glean $40-80·Onyx $20), 환각 통제(RAG도 17-33% 환각), 빌드 vs 바이 트리, **유스케이스 4종 레시피** |
+| 4 | **업무 자동화** | RAG 도구·가격(M365 $30·Glean $40-80·Onyx $20), 환각 통제(RAG도 17-33% 환각), 빌드 vs 바이 트리, **유스케이스 4종 레시피**, **에이전트가 프로덕션에서 실패하는 이유**(Gartner 40% 취소·에이전트 워싱) |
 | 5 | **전략·ROI·거버넌스** | 측정 지표·우선순위 매트릭스, CDAO 조직 변화(70%·21→36%), "AI 스프롤", 온프레 vs 클라우드, SLM 3배 예측, 로드맵, **비용 최적화(캐싱 90%·배치 50%·라우팅)** + **평가·관측 툴링(Langfuse·Braintrust)** |
 | 6 | **보안·규제** | OWASP LLM Top 10, NIST AI RMF, 섀도우 AI, EU AI Act·GDPR 22조·한국 PIPA 37조의2, **AI가 만드는 보안 결함**(45% 취약·슬롭스쿼팅) |
-| 7 | 치트시트 | 한 페이지 의사결정 요약 |
-| 8 | 출처 | 1차/보조 구분, 검증 상태 |
+| 7 | **한국 기업 맥락** | 국산 LLM(HyperCLOVA X·Solar·EXAONE)·도입 현황(55.7%)·소버린 AI, **언제 국산 모델 vs 글로벌** |
+| 8 | 치트시트 | 한 페이지 의사결정 요약 |
+| 9 | 출처 | 1차/보조 구분, 검증 상태 |
 
 ## 그림
 
@@ -86,6 +87,9 @@
 </tr>
 <tr>
 <td colspan="2" align="center"><img alt="when AI helps vs hurts" src="paper/figs/fig5_when_ai_helps.png" width="78%"><br><sub><b>Fig 5.</b> AI는 만능 가속기가 아니라 증폭기다. 그린필드·주니어엔 +35~55%, 본인이 깊이 아는 성숙 대형 레포엔 −19%. 작업·코드베이스·숙련도가 부호를 정한다.</sub></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><img alt="agentic reality" src="paper/figs/fig6_agent_reality.png" width="78%"><br><sub><b>Fig 6.</b> 에이전트의 현실: 탐색은 쉽고 프로덕션은 어렵다. 프로덕션 배포 ~11%, Gartner는 2027년까지 40%+ 취소 예측. "에이전트 워싱" 경계.</sub></td>
 </tr>
 </table>
 

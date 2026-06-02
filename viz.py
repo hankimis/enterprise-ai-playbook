@@ -148,5 +148,25 @@ def when_ai_helps():
     ax.grid(axis="x", alpha=0.25); fig.tight_layout()
     fig.savefig(FIGS/"fig5_when_ai_helps.png", bbox_inches="tight"); print("fig5_when_ai_helps.png")
 
+# Fig 6: the agentic reality gap
+def agent_reality():
+    labels = ["Enterprises exploring\nAI agents*", "Deployed in\nproduction*",
+              "Projects to be canceled\nby end of 2027 (Gartner)"]
+    vals = [99, 11, 40]; cols = [BLUE, GREEN, RED]
+    y = np.arange(len(labels))[::-1]
+    fig, ax = plt.subplots(figsize=(8.2, 4.0))
+    ax.barh(y, vals, color=cols, height=0.6)
+    for yi, v in zip(y, vals):
+        ax.text(v + 1.5, yi, f"{v}%{'+' if v==40 else ''}", va="center", fontsize=12, weight="bold")
+    ax.set_yticks(y); ax.set_yticklabels(labels, fontsize=9)
+    ax.set_xlim(0, 110); ax.set_xlabel("Percent")
+    ax.set_title("The agentic reality: exploring is easy, production is hard",
+                 fontsize=12.5, weight="bold")
+    ax.text(1.0, -0.20, "*industry-survey/blog estimates;  40% is a Gartner prediction (2025-06).  Beware 'agent washing'.",
+            transform=ax.transAxes, ha="right", fontsize=7.5, color=GREY)
+    for s in ("top","right"): ax.spines[s].set_visible(False)
+    ax.grid(axis="x", alpha=0.25); fig.tight_layout()
+    fig.savefig(FIGS/"fig6_agent_reality.png", bbox_inches="tight"); print("fig6_agent_reality.png")
+
 if __name__ == "__main__":
-    perception_gap(); roi_reality(); code_insecurity(); model_difficulty(); when_ai_helps()
+    perception_gap(); roi_reality(); code_insecurity(); model_difficulty(); when_ai_helps(); agent_reality()
