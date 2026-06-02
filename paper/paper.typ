@@ -8,6 +8,9 @@
 #show table: set text(9pt)
 
 #align(center)[#text(18pt, weight: "bold")[기업 AI 도입·운영 플레이북 (2026)]]
+#v(4pt)
+#figure(image("figs/fig1_perception_gap.png", width: 78%), caption: [숙련 개발자는 AI로 20% 빨라졌다고 느꼈지만 실제로는 19% 느려졌다 (METR RCT, 2025). 체감이 아니라 측정.])
+#v(2pt)
 
 
 #block(fill: luma(245), inset: 8pt, radius: 3pt, width: 100%)[어떤 모델·에이전트·세팅으로 효율을 극대화하는가. 일반 기업용, 벤더 중립, 정직한 트레이드오프 중심. 작성: IOV LABS. 방법: deep-research 4개 패스(다중 소스 검색 → 소스 수집 → 적대적 교차검증) + 핵심 수치 직접 스팟 검증. *검증 표기*: `[검증완료]` = 적대적 3표 검증 통과 / `[스팟확인]` = 직접 재검색으로 확인 / `[출처·미검증]` = 출처는 있으나 자동 교차검증 미완(인프라 오류로 검증 단계 실패). 모든 가격·모델 수치는 2026년 5~6월 기준이며 빠르게 변한다.]
