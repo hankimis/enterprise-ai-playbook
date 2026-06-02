@@ -121,5 +121,32 @@ def model_difficulty():
     style(a2); fig.tight_layout()
     fig.savefig(FIGS/"fig4_model_pricing.png", bbox_inches="tight"); print("fig4_model_pricing.png")
 
+# Fig 5: when AI helps vs hurts (context-dependent effect)
+def when_ai_helps():
+    rows = [
+        ("Greenfield task\n(Copilot RCT, n=95)*", 55.8, GREEN),
+        ("Brownfield, students\n(ICER 2025, n=10)", 35.0, GREEN),
+        ("New devs, 2026\n(METR update)", -4.0, GOLD),
+        ("Skilled devs, mature repo\n(METR 2025, n=16)", -19.0, RED),
+    ]
+    labels = [r[0] for r in rows]; vals = [r[1] for r in rows]; cols = [r[2] for r in rows]
+    y = np.arange(len(rows))[::-1]
+    fig, ax = plt.subplots(figsize=(8.4, 4.6))
+    ax.barh(y, vals, color=cols, height=0.6)
+    ax.axvline(0, color="#333", lw=1)
+    for yi, v in zip(y, vals):
+        ax.text(v + (2 if v >= 0 else -2), yi, f"{'+' if v>0 else ''}{v:g}%",
+                va="center", ha="left" if v >= 0 else "right", fontsize=12, weight="bold",
+                color=GREEN if v >= 0 else RED)
+    ax.set_yticks(y); ax.set_yticklabels(labels, fontsize=9)
+    ax.set_xlim(-30, 70); ax.set_xlabel("Change in speed / completion time")
+    ax.set_title("AI is an amplifier, not a universal accelerator\nThe sign flips with task, codebase, and seniority",
+                 fontsize=12.5, weight="bold")
+    ax.text(1.0, -0.17, "*vendor-affiliated, single greenfield task. Bars are not directly comparable across study designs.",
+            transform=ax.transAxes, ha="right", fontsize=7.5, color=GREY)
+    for s in ("top","right"): ax.spines[s].set_visible(False)
+    ax.grid(axis="x", alpha=0.25); fig.tight_layout()
+    fig.savefig(FIGS/"fig5_when_ai_helps.png", bbox_inches="tight"); print("fig5_when_ai_helps.png")
+
 if __name__ == "__main__":
-    perception_gap(); roi_reality(); code_insecurity(); model_difficulty()
+    perception_gap(); roi_reality(); code_insecurity(); model_difficulty(); when_ai_helps()

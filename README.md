@@ -49,6 +49,8 @@
 | AI 업무 사용률 | 90%, 생산성 체감 80%+ | DORA 2025 | ✅ 검증완료 |
 | AI 코드 신뢰 | 30%가 거의/전혀 불신 | DORA 2025 | ✅ 검증완료 |
 | 체감 vs 실제 | **19% 더 느려짐**, 본인은 20% 빨라졌다 착각 | METR 2025 | ✅ 검증완료 |
+| AI 코딩 효과(맥락별) | 그린필드 **+55.8%** ~ 성숙레포 **−19%** (증폭기, 부호 가변) | Copilot RCT / METR | ✅ 검증완료 |
+| 비용 절감 | 프롬프트 캐싱 **90%↓**, 배치 **50%↓** (스택 95%+) | Anthropic/OpenAI 문서 | ☑️ 스팟확인 |
 | 조직 AI 프로젝트 폐기 | 2025년 **42%**가 대부분 폐기 (전년 2배+) | S&P Global | ✅ 검증완료 |
 | 유의미 ROI | 생성형 29% / 에이전트 23% | WRITER 2026 | ✅ 검증완료 |
 | M365 Copilot 파일럿→대규모 배포 | 단 **6%** | Gartner 2025 | ☑️ 스팟확인 |
@@ -63,10 +65,10 @@
 | # | 섹션 | 핵심 내용 |
 |---|---|---|
 | 1 | 현실 점검 | 정직한 검증 수치, 생산성 역설 |
-| 2 | **개발·코딩** | 난이도별 모델 티어(93/74/67%), $20·$200 가격표, GitHub Agent HQ 오케스트레이션, 표준 워크플로 + **AI 코드 PR 리뷰 체크리스트** |
+| 2 | **개발·코딩** | **AI는 언제 빠르게/느리게(균형 근거 + 조건 매트릭스)**, 난이도별 모델 티어(93/74/67%), $20·$200 가격표, GitHub Agent HQ, 표준 워크플로 + **AI 코드 PR 리뷰 체크리스트** |
 | 3 | **디자인·마케팅** | "AI 티" 제거: 왜 다 보라 그라데이션인가, **디자인 시스템 마크다운 템플릿**, "AI 티" 판별 체크리스트, [The Tells](https://labs.iovstudio.kr/ko/papers/ai-design-tells) 연계 |
 | 4 | **업무 자동화** | RAG 도구·가격(M365 $30·Glean $40-80·Onyx $20), 환각 통제(RAG도 17-33% 환각), 빌드 vs 바이 트리, **유스케이스 4종 레시피** |
-| 5 | **전략·ROI·거버넌스** | 측정 지표·우선순위 매트릭스, CDAO 조직 변화(70%·21→36%), "AI 스프롤", 온프레 vs 클라우드 경제성, SLM 3배 예측, 단계별 로드맵 |
+| 5 | **전략·ROI·거버넌스** | 측정 지표·우선순위 매트릭스, CDAO 조직 변화(70%·21→36%), "AI 스프롤", 온프레 vs 클라우드, SLM 3배 예측, 로드맵, **비용 최적화(캐싱 90%·배치 50%·라우팅)** + **평가·관측 툴링(Langfuse·Braintrust)** |
 | 6 | **보안·규제** | OWASP LLM Top 10, NIST AI RMF, 섀도우 AI, EU AI Act·GDPR 22조·한국 PIPA 37조의2, **AI가 만드는 보안 결함**(45% 취약·슬롭스쿼팅) |
 | 7 | 치트시트 | 한 페이지 의사결정 요약 |
 | 8 | 출처 | 1차/보조 구분, 검증 상태 |
@@ -81,6 +83,9 @@
 <tr>
 <td width="50%"><img alt="ai code insecurity" src="paper/figs/fig3_code_insecurity.png"><br><sub><b>Fig 3.</b> AI 코드 45%가 취약, 큰 모델도 안전하지 않음 (Veracode 2025).</sub></td>
 <td width="50%"><img alt="model by difficulty and pricing" src="paper/figs/fig4_model_pricing.png"><br><sub><b>Fig 4.</b> 난이도로 모델 티어를 가르고, 강도로 비용을 쓴다.</sub></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><img alt="when AI helps vs hurts" src="paper/figs/fig5_when_ai_helps.png" width="78%"><br><sub><b>Fig 5.</b> AI는 만능 가속기가 아니라 증폭기다. 그린필드·주니어엔 +35~55%, 본인이 깊이 아는 성숙 대형 레포엔 −19%. 작업·코드베이스·숙련도가 부호를 정한다.</sub></td>
 </tr>
 </table>
 
